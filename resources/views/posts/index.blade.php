@@ -29,11 +29,12 @@
 <body>
     <h1>All Blog Posts</h1>
 
-    @foreach ($posts as $post)
+    @foreach ($posts_with_username as $post)
     <div style="max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; background-color: #f9f9f9;">
         <a href="{{ url('post/'.$post->id) }}">
             <h2>{{ $post->title }}</h2>
         </a>
+        <h4>{{ $post->username }}</h4>
         <div>
             <p>{{ $post->content }}</p>
         </div>

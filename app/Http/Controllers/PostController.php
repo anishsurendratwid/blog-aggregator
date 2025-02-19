@@ -4,21 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class PostController extends Controller {
     
     public function show($id) {
 
         $post = Post::findOrFail($id);
-        
-        return view('posts.show', compact('post'));
+        $user = User::findOrFail($post->user_id);
+        return view('posts.show', compact('post'), compact('user'));
     }
 
     public function showAll() {
         
         $posts = Post::all();
-
-        return view('posts.index', compact('posts'));
+        $posts_with_username = [];
+        foreach ($posts as $post) {
+            $temp = $post;
+            $user = User::findOrFail($post->user_id);
+            $temp->username = $user->username;
+            array_push($posts_with_username,$temp);
+        }
+        return view('posts.index', compact('posts_with_username'));
     }
 
     public function create() {
@@ -32,8 +39,6 @@ class PostController extends Controller {
             $post->content = $request->content;
      
             $post->save();
-
-     
             return redirect(url('/post/'.$post->id));
     }
 }

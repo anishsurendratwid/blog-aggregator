@@ -29,6 +29,7 @@
 <body>
     <div style="max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; background-color: #f9f9f9;">
         <h1>{{ $post->title }}</h1>
+        <h3>{{ $user->username }}</h3>
         <div>
             <p>{{ $post->content }}</p>
         </div>
