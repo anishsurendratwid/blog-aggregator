@@ -44,8 +44,6 @@ This project is a simple blog aggregator built with Laravel. It fetches and disp
 
     Then, edit the `.env` file to configure your database, API keys, and other settings.
 
-*   **Blog Sources:** The specific blog sources to aggregate are likely configured within the application's code or database.  Refer to the application's documentation or code to understand how to add or modify these sources.
-
 ## Common Issues and Troubleshooting
 
 *   **"Address already in use" error:**  This usually means that port 8000 is already being used by another application on your system.  You can either stop the other application or change the port mapping in your `docker-compose.yml` file.
