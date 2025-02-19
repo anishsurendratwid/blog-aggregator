@@ -13,4 +13,11 @@ class PostController extends Controller {
         
         return view('posts.show', compact('post'));
     }
+
+    public function showAll(){
+        
+        $posts = Post::all();
+
+        return view('posts.index', compact('posts'));
+    }
 }

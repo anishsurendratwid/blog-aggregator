@@ -7,8 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', function () {
-    return "This is a page where all posts will be shown";
-});
+Route::get('/posts', [PostController::class, 'showAll']);
 
 Route::get('/post/{id}', [PostController::class, 'show']);
