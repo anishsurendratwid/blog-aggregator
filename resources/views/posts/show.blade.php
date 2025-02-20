@@ -36,6 +36,21 @@
             z-index: 1000;
         }
 
+        .all-posts-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 15px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
         .create-post-btn:hover {
             background-color: #0056b3;
         }
@@ -43,9 +58,16 @@
         .logout-btn:hover {
             background-color: #0056b3;
         }
+
+        .all-posts-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
+    <a href="{{ url('posts') }}">
+        <button class="all-posts-btn">All posts</button>
+    </a>
     <div style="max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; background-color: #f9f9f9;">
         <h1>{{ $post->title }}</h1>
         <h3>{{ $user->username }}</h3>
