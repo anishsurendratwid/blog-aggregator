@@ -21,7 +21,26 @@
             z-index: 1000;
         }
 
+        .logout-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 15px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
         .create-post-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .logout-btn:hover {
             background-color: #0056b3;
         }
     </style>
@@ -46,5 +65,9 @@
         <button class="create-post-btn">Create New Post</button>
     </a>
 
+    <form action="{{ url('logout') }}" method="POST">
+        @csrf
+        <button class="logout-btn" type="submit">Logout</button>
+    </a>
 </body>
 </html>
